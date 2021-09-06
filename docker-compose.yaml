@@ -26,7 +26,7 @@ services:
     volumes: 
       - ./nodejs/src:/usr/src/app
     working_dir: /usr/src/app
-    command: bash -c "dockerize -wait tcp://db:3306 && node index.js"
+    command: bash -c "npm install && dockerize -wait tcp://db:3306 && node index.js"
     restart: always
     depends_on: 
       - db
